@@ -1,22 +1,26 @@
 import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import Home from "./pages/home";
-import Store from "./pages/store";
-import { Category } from "./pages/category";
-import { About } from "./pages/about";
-import { NewArrival } from "./pages/newArrival";
+import { Home } from "./pages/Home";
+import { Store } from "./pages/Store";
+import { Category } from "./pages/Category";
+import { About } from "./pages/About";
+import { NewArrival } from "./pages/NewArrival";
+import { Header } from "./components/Header";
 
 function App() {
   return (
-    <Container>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/new" element={<NewArrival />} />
-      </Routes>
-    </Container>
+    <>
+      <Header />
+      <Container className="mb-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/new" element={<NewArrival />} />
+        </Routes>
+      </Container>
+    </>
   );
 }
 
