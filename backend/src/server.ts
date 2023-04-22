@@ -1,9 +1,15 @@
 import "dotenv/config";
+import express from "express";
+import cors from "cors";
 import { ApolloServer } from "apollo-server";
 import mongoose, { ConnectOptions } from "mongoose";
 import env from "./util/validateEnv";
 import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
+
+const app = express();
+
+app.use(cors);
 
 const port = env.PORT;
 
